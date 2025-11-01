@@ -114,12 +114,12 @@
 		930B9E692EB4244A00468D9E /* SFTransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTransactionRowView.swift; sourceTree = "<group>"; };
 		930B9E6B2EB4245400468D9E /* SFCandidateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCandidateDetailView.swift; sourceTree = "<group>"; };
 		930B9E6D2EB425FC00468D9E /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
-		932BFAF52EB6835F001FBEAC /* VoteVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = VoteVault.app; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVault.app"; sourceTree = "<absolute>"; };
-		932BFAF62EB6835F001FBEAC /* VoteVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VoteVaultTests.xctest; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVault.app/PlugIns/VoteVaultTests.xctest"; sourceTree = "<absolute>"; };
-		932BFAF72EB6835F001FBEAC /* VoteVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VoteVaultUITests.xctest; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVaultUITests-Runner.app/PlugIns/VoteVaultUITests.xctest"; sourceTree = "<absolute>"; };
 		936191812E627788004D5EF1 /* TopSuperPACExpendituresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSuperPACExpendituresView.swift; sourceTree = "<group>"; };
 		936191832E6277A2004D5EF1 /* SuperPACExpenditureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPACExpenditureRowView.swift; sourceTree = "<group>"; };
 		936191852E6278BB004D5EF1 /* SuperPACElectionCyclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPACElectionCyclesView.swift; sourceTree = "<group>"; };
+		936522612EB68D77003B4851 /* VoteVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = VoteVault.app; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVault.app"; sourceTree = "<absolute>"; };
+		936522622EB68D77003B4851 /* VoteVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VoteVaultTests.xctest; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVault.app/PlugIns/VoteVaultTests.xctest"; sourceTree = "<absolute>"; };
+		936522632EB68D77003B4851 /* VoteVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VoteVaultUITests.xctest; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVaultUITests-Runner.app/PlugIns/VoteVaultUITests.xctest"; sourceTree = "<absolute>"; };
 		93BED8422E5B705A002FE21B /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		93BED8432E5B70F2002FE21B /* FederalElectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederalElectionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,11 +141,6 @@
 				930B9E702EB4387400468D9E /* Exceptions for "VoteVault" folder in "VoteVault" target */,
 			);
 			path = VoteVault;
-			sourceTree = "<group>";
-		};
-		9390CC172E58E96A00CBFD35 /* VoteVaultTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VoteVaultTests;
 			sourceTree = "<group>";
 		};
 		9390CC212E58E96A00CBFD35 /* VoteVaultUITests */ = {
@@ -263,7 +258,6 @@
 				93BED83D2E5B701C002FE21B /* Views */,
 				93BED83C2E5B7001002FE21B /* Models */,
 				9390CC092E58E96900CBFD35 /* VoteVault */,
-				9390CC172E58E96A00CBFD35 /* VoteVaultTests */,
 				9390CC212E58E96A00CBFD35 /* VoteVaultUITests */,
 				930B9E6D2EB425FC00468D9E /* Secrets.xcconfig */,
 			);
@@ -326,7 +320,7 @@
 			packageProductDependencies = (
 			);
 			productName = VoteVault;
-			productReference = 932BFAF52EB6835F001FBEAC /* VoteVault.app */;
+			productReference = 936522612EB68D77003B4851 /* VoteVault.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9390CC132E58E96A00CBFD35 /* VoteVaultTests */ = {
@@ -342,14 +336,11 @@
 			dependencies = (
 				9390CC162E58E96A00CBFD35 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				9390CC172E58E96A00CBFD35 /* VoteVaultTests */,
-			);
 			name = VoteVaultTests;
 			packageProductDependencies = (
 			);
 			productName = VoteVaultTests;
-			productReference = 932BFAF62EB6835F001FBEAC /* VoteVaultTests.xctest */;
+			productReference = 936522622EB68D77003B4851 /* VoteVaultTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		9390CC1D2E58E96A00CBFD35 /* VoteVaultUITests */ = {
@@ -372,7 +363,7 @@
 			packageProductDependencies = (
 			);
 			productName = VoteVaultUITests;
-			productReference = 932BFAF72EB6835F001FBEAC /* VoteVaultUITests.xctest */;
+			productReference = 936522632EB68D77003B4851 /* VoteVaultUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
