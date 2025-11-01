@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
             }
             .padding()
-            .navigationTitle("VoteVault")
+            .navigationTitle("BallotBux")
             .navigationViewStyle(.stack)
             .sheet(isPresented: $showingAboutSheet) {
                 AboutView()
