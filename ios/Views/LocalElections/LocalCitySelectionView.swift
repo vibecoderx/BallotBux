@@ -7,6 +7,7 @@ import SwiftUI
 
 struct LocalCitySelectionView: View {
     let cities: [(name: String, destination: AnyView)] = [
+        ("Los Angeles, CA", AnyView(LAElectionYearsView())),
         ("New York City, NY", AnyView(NYCMayoralElectionYearsView())),
         ("San Francisco, CA", AnyView(SFElectionYearsView()))
         // Add more cities here as they are implemented
@@ -38,4 +39,3 @@ struct LocalCitySelectionView_Previews: PreviewProvider {
         LocalCitySelectionView()
     }
 }
-
