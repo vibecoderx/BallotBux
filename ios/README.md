@@ -103,7 +103,25 @@
 
 - https://nf4.netfile.com/pub2/Default.aspx?focus=SearchName&aid=SFO
 
+### Austin
+
+- https://data.austintexas.gov/browse?limitTo=datasets&sortBy=relevance&pageSize=20&q=Campaign+Finance+-+Committee+Purpose
+
 ### Los Angeles
+
+- Candidates
+  - https://data.lacity.org/Administration-Finance/City-Campaign-Statements-Filed/br3a-db9a/about_data
+  - https://data.lacity.org/api/v3/views/br3a-db9a/query.json?$$app_token=XXX&query=SELECT%20*%20WHERE%20cmt_type_desc=%27Candidate%27
+  
+- Contributions
+  - https://data.lacity.org/api/v3/views/m6g2-gc6c/query.json
+  - "query=SELECT * WHERE cmt_id = "1234" AND schedule != "I" ORDER BY con_amount DESC LIMIT 100"
+  - From https://data.lacity.org/Administration-Finance/City-Campaign-Contributions-and-Misc-Increases-to-/m6g2-gc6c/about_data
+  
+- Expenditures
+  - https://data.lacity.org/Administration-Finance/City-Campaign-Expenditures/5mrt-4zhe/about_data
+  - https://data.lacity.org/api/v3/views/5mrt-4zhe/query.json
+  - Use cmt\_name instead of cmt\_id
 
 - https://ethics.lacity.gov/data/campaigns/contributions/#dt
 
