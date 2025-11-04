@@ -126,9 +126,9 @@
 		936191852E6278BB004D5EF1 /* SuperPACElectionCyclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPACElectionCyclesView.swift; sourceTree = "<group>"; };
 		93BED8422E5B705A002FE21B /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		93BED8432E5B70F2002FE21B /* FederalElectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederalElectionsView.swift; sourceTree = "<group>"; };
-		93E3C6862EB6C7E600833621 /* VoteVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoteVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		93E3C6872EB6C7E600833621 /* VoteVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoteVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		93E3C6882EB6C7E600833621 /* VoteVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoteVaultUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E3C6862EB6C7E600833621 /* VoteVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = VoteVault.app; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVault.app"; sourceTree = "<absolute>"; };
+		93E3C6872EB6C7E600833621 /* VoteVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VoteVaultTests.xctest; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVault.app/PlugIns/VoteVaultTests.xctest"; sourceTree = "<absolute>"; };
+		93E3C6882EB6C7E600833621 /* VoteVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VoteVaultUITests.xctest; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVaultUITests-Runner.app/PlugIns/VoteVaultUITests.xctest"; sourceTree = "<absolute>"; };
 		93E3C6D52EB849EC00833621 /* LADataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LADataStore.swift; sourceTree = "<group>"; };
 		93E3C6D72EB9775900833621 /* LADataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LADataModels.swift; sourceTree = "<group>"; };
 		93E3C6D92EB977A100833621 /* LAElectionYearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LAElectionYearsView.swift; sourceTree = "<group>"; };
@@ -279,9 +279,6 @@
 				9390CC092E58E96900CBFD35 /* VoteVault */,
 				9390CC212E58E96A00CBFD35 /* VoteVaultUITests */,
 				930B9E6D2EB425FC00468D9E /* Secrets.xcconfig */,
-				93E3C6862EB6C7E600833621 /* VoteVault.app */,
-				93E3C6872EB6C7E600833621 /* VoteVaultTests.xctest */,
-				93E3C6882EB6C7E600833621 /* VoteVaultUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -704,7 +701,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoteVault/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = VoteVault;
+				INFOPLIST_KEY_CFBundleDisplayName = BallotBux;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -737,7 +734,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoteVault/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = VoteVault;
+				INFOPLIST_KEY_CFBundleDisplayName = BallotBux;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

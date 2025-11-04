@@ -24,7 +24,7 @@ VoteVault provides users with clear visibility into campaign finances for politi
 
 * **Federal Elections:** Track finances for Presidential, Senate, and House races.
 * **State Elections:** Detailed contribution and expenditure data for state-level races in New York, New Jersey, Illinois, and Washington.
-* **Local Elections:** Mayoral election finance tracking for major US cities, including New York City and San Francisco.
+* **Local Elections:** Mayoral election finance tracking for major US cities, including New York City, Los Angeles and San Francisco.
 * **Super PACs:** View top expenditures from Super PACs, filterable by candidate and election cycle.
 * **Detailed Views:** Drill down into specific candidates to see itemized contributions, expenditures, and top donor/payee lists.
 
@@ -134,7 +134,8 @@ This app relies on publicly available data from the following sources:
 * [WA OpenData](https://data.wa.gov/): Washington State Public Disclosure Commission data.
 * [Illinois State Board of Elections](https://www.elections.il.gov/): Illinois campaign disclosure data files.
 * [NYC Campaign Finance Board](https://www.nyccfb.info/): New York City campaign finance data.
-* [SF OpenData](https://data.sfgov.org/): San Francisco Ethics Commission data.
+* [San Francisco OpenData](https://data.sfgov.org/): San Francisco Ethics Commission data.
+* [Log Angeles Open Data](https://https://data.lacity.org): Los Angeles campaign finance data.
 
 ---
 
