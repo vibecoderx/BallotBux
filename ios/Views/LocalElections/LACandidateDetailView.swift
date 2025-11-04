@@ -2,8 +2,6 @@
 //  LACandidateDetailView.swift
 //  VoteVault
 //
-//  This view shows contributions and expenditures for an LA mayoral candidate.
-//
 
 import SwiftUI
 
@@ -14,22 +12,22 @@ struct LACandidateDetailView: View {
     @State private var selectedTab = 0
     
     // States for Tabs
-    @State private var contributions: [LATransaction] = []
+    @State private var contributions: [LAContribution] = []
     @State private var expenditures: [LAExpenditure] = []
     
-    // Initialize totals to 0.0 to display the "Total" sections as requested
-    @State private var totalContributions: Double? = 0.0
-    @State private var totalExpenditures: Double? = 0.0
+    @State private var totalContributions: Double? = nil
+    @State private var totalExpenditures: Double? = nil
     
-    // Loading/Error states (set to false/true since we aren't fetching)
     @State private var isLoadingContributions = false
     @State private var isLoadingExpenditures = false
     @State private var contributionError: String? = nil
     @State private var expenditureError: String? = nil
     
-    // Set to true to show the "No contributions" message
-    @State private var hasFetchedContributions = true
-    @State private var hasFetchedExpenditures = true
+    @State private var hasFetchedContributions = false
+    @State private var hasFetchedExpenditures = false
+    
+    // SF App Token (used for LA API as well)
+    @State private var appToken: String?
     
     var body: some View {
         VStack {
@@ -52,20 +50,12 @@ struct LACandidateDetailView: View {
         .navigationTitle(candidate.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            // We will fetch data here in the next step
-            // For now, we just ensure the view shows the empty state
-            if !hasFetchedContributions {
-                 // fetchContributions()
-                 hasFetchedContributions = true
-                 isLoadingContributions = false
-            }
+            loadAppTokenAndFetch()
         }
         .onChange(of: selectedTab) {
-            // We will fetch data here in the next step
-            if selectedTab == 1 && !hasFetchedExpenditures {
-                // fetchExpenditures()
-                hasFetchedExpenditures = true
-                isLoadingExpenditures = false
+            // Only fetch if token is loaded and data hasn't been fetched
+            if appToken != nil {
+                fetchDataForCurrentTab()
             }
         }
     }
@@ -82,31 +72,11 @@ struct LACandidateDetailView: View {
                      .font(.headline).foregroundColor(.red)
                  Text(error).font(.callout).foregroundColor(.gray).multilineTextAlignment(.center)
              }.padding()
-        // Show empty message if list is empty AND we have "fetched"
-        } else if contributions.isEmpty && hasFetchedContributions {
-             List {
-                 // Section for Total Contributions
-                 if let total = totalContributions {
-                     Section {
-                         HStack {
-                             Text("Total Contributions:")
-                                 .font(.headline)
-                             Spacer()
-                             Text(formatAmount(total))
-                                 .font(.headline)
-                                 .fontWeight(.bold)
-                                 .foregroundColor(.blue)
-                         }
-                     }
-                 }
-                 // Section for the empty message
-                 Section {
-                     Text("No contributions found for this candidate.").foregroundColor(.secondary)
-                 }
-             }
+        } else if contributions.isEmpty && totalContributions == nil && hasFetchedContributions {
+             Text("No contributions found for this candidate.").foregroundColor(.secondary).padding()
         } else {
-            // This is the state where we have contributions
             List {
+                // Section for Total Contributions
                 if let total = totalContributions {
                     Section {
                         HStack {
@@ -121,11 +91,12 @@ struct LACandidateDetailView: View {
                     }
                 }
                 
-                Section(header: Text("Top Contributions").font(.headline)) {
-                    // This will be populated by the API call
-                    ForEach(contributions) { transaction in
-                        // We'll need a LATransactionRowView, but for now:
-                        Text(transaction.name)
+                // Section for Top 100 Contributions
+                if !contributions.isEmpty {
+                    Section(header: Text("Top 100 Contributions").font(.headline)) {
+                        ForEach(contributions) { contribution in
+                            LAContributionRowView(contribution: contribution)
+                        }
                     }
                 }
             }
@@ -143,8 +114,9 @@ struct LACandidateDetailView: View {
                      .font(.headline).foregroundColor(.red)
                  Text(error).font(.callout).foregroundColor(.gray).multilineTextAlignment(.center)
              }.padding()
-        // Show empty message if list is empty AND we have "fetched"
-        } else if expenditures.isEmpty && hasFetchedExpenditures {
+        } else if expenditures.isEmpty && totalExpenditures == nil && hasFetchedExpenditures {
+            Text("No expenditures found for this candidate.").foregroundColor(.secondary).padding()
+        } else {
              List {
                  // Section for Total Expenditures
                  if let total = totalExpenditures {
@@ -160,33 +132,13 @@ struct LACandidateDetailView: View {
                          }
                      }
                  }
-                 // Section for the empty message
-                 Section {
-                     Text("No expenditures found for this candidate.").foregroundColor(.secondary)
-                 }
-             }
-        } else {
-             // This is the state where we have expenditures
-             List {
-                 if let total = totalExpenditures {
-                     Section {
-                         HStack {
-                             Text("Total Expenditures:")
-                                 .font(.headline)
-                             Spacer()
-                             Text(formatAmount(total))
-                                 .font(.headline)
-                                 .fontWeight(.bold)
-                                 .foregroundColor(.blue)
-                         }
-                     }
-                 }
                  
-                 Section(header: Text("Top Expenditures").font(.headline)) {
-                     // This will be populated by the API call
-                     ForEach(expenditures) { expenditure in
-                         // We'll need a row view, but for now:
-                         Text(expenditure.name)
+                 // Section for Top 100 Expenditures
+                 if !expenditures.isEmpty {
+                     Section(header: Text("Top 100 Expenditures").font(.headline)) {
+                         ForEach(expenditures) { expenditure in
+                             LAExpenditureRowView(expenditure: expenditure)
+                         }
                      }
                  }
              }
@@ -194,7 +146,170 @@ struct LACandidateDetailView: View {
         }
     }
     
-    // Helper function to format currency
+    // MARK: - Data Fetching
+    
+    private func loadAppTokenAndFetch() {
+        guard let token = Secrets.get(key: "SF_APP_TOKEN") else {
+            let errorMsg = "App Token (SF_APP_TOKEN) is missing. Please check Secrets.xcconfig."
+            self.contributionError = errorMsg
+            self.expenditureError = errorMsg
+            return
+        }
+        self.appToken = token
+        
+        // Fetch data for the currently selected tab
+        fetchDataForCurrentTab()
+    }
+    
+    private func fetchDataForCurrentTab() {
+        let group = DispatchGroup()
+        
+        if selectedTab == 0 && !hasFetchedContributions {
+            isLoadingContributions = true
+            contributionError = nil
+            hasFetchedContributions = true
+            
+            fetchTotal(isContribution: true, group: group)
+            fetchTransactions(isContribution: true, group: group)
+            
+            group.notify(queue: .main) {
+                isLoadingContributions = false
+            }
+            
+        } else if selectedTab == 1 && !hasFetchedExpenditures {
+            isLoadingExpenditures = true
+            expenditureError = nil
+            hasFetchedExpenditures = true
+            
+            fetchTotal(isContribution: false, group: group)
+            fetchTransactions(isContribution: false, group: group)
+            
+            group.notify(queue: .main) {
+                isLoadingExpenditures = false
+            }
+        }
+    }
+    
+    private func fetchTotal(isContribution: Bool, group: DispatchGroup) {
+        guard let appToken = appToken else { return }
+        group.enter()
+
+        let endpoint = isContribution ? "m6g2-gc6c" : "5mrt-4zhe"
+        let query: String
+        
+        if isContribution {
+            query = "SELECT sum(con_amount) WHERE cmt_id = '\(candidate.committeeId)' AND schedule != 'I'"
+        } else {
+            query = "SELECT sum(exp_amount) WHERE cmt_name = '\(candidate.committeeName)'"
+        }
+        
+        guard let url = buildQueryURL(endpoint: endpoint, query: query, appToken: appToken) else {
+            let errorMsg = "Internal error: Could not create total API URL."
+            if isContribution { self.contributionError = errorMsg }
+            else { self.expenditureError = errorMsg }
+            group.leave()
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            defer { group.leave() }
+            DispatchQueue.main.async {
+                let errorState = isContribution ? $contributionError : $expenditureError
+                
+                if let error = error {
+                    errorState.wrappedValue = (errorState.wrappedValue ?? "") + "\nNetwork error (total): \(error.localizedDescription)"
+                    return
+                }
+                
+                guard let data = data else {
+                    errorState.wrappedValue = (errorState.wrappedValue ?? "") + "\nNo data received (total)."
+                    return
+                }
+
+                do {
+                    if isContribution {
+                        let totalResponse = try JSONDecoder().decode([LATotalContribution].self, from: data)
+                        if let totalString = totalResponse.first?.sum_con_amount, let totalValue = Double(totalString) {
+                            self.totalContributions = totalValue
+                        } else {
+                            self.totalContributions = 0.0
+                        }
+                    } else {
+                        let totalResponse = try JSONDecoder().decode([LATotalExpenditure].self, from: data)
+                        if let totalString = totalResponse.first?.sum_exp_amount, let totalValue = Double(totalString) {
+                            self.totalExpenditures = totalValue
+                        } else {
+                            self.totalExpenditures = 0.0
+                        }
+                    }
+                } catch {
+                    errorState.wrappedValue = (errorState.wrappedValue ?? "") + "\nFailed to parse total: \(error.localizedDescription)"
+                }
+            }
+        }.resume()
+    }
+    
+    private func fetchTransactions(isContribution: Bool, group: DispatchGroup) {
+        guard let appToken = appToken else { return }
+        group.enter()
+
+        let endpoint = isContribution ? "m6g2-gc6c" : "5mrt-4zhe"
+        let query: String
+        
+        if isContribution {
+            query = "SELECT * WHERE cmt_id = '\(candidate.committeeId)' AND schedule != 'I' ORDER BY con_amount DESC LIMIT 100"
+        } else {
+            // Use 100 limit for consistency, not 10 as in prompt
+            query = "SELECT * WHERE cmt_name = '\(candidate.committeeName)' ORDER BY exp_amount DESC LIMIT 100"
+        }
+        
+        guard let url = buildQueryURL(endpoint: endpoint, query: query, appToken: appToken) else {
+            let errorMsg = "Internal error: Could not create transaction API URL."
+            if isContribution { self.contributionError = errorMsg }
+            else { self.expenditureError = errorMsg }
+            group.leave()
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            defer { group.leave() }
+            DispatchQueue.main.async {
+                let errorState = isContribution ? $contributionError : $expenditureError
+                
+                if let error = error {
+                    errorState.wrappedValue = (errorState.wrappedValue ?? "") + "\nNetwork error (list): \(error.localizedDescription)"
+                    return
+                }
+                
+                guard let data = data else {
+                    errorState.wrappedValue = (errorState.wrappedValue ?? "") + "\nNo data received (list)."
+                    return
+                }
+                
+                do {
+                    if isContribution {
+                        self.contributions = try JSONDecoder().decode([LAContribution].self, from: data)
+                    } else {
+                        self.expenditures = try JSONDecoder().decode([LAExpenditure].self, from: data)
+                    }
+                } catch {
+                    errorState.wrappedValue = (errorState.wrappedValue ?? "") + "\nFailed to parse list: \(error.localizedDescription)"
+                }
+            }
+        }.resume()
+    }
+    
+    // MARK: - Helpers
+
+    private func buildQueryURL(endpoint: String, query: String, appToken: String) -> URL? {
+        var urlComponents = URLComponents(string: "https://data.lacity.org/api/v3/views/\(endpoint)/query.json")
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "$$app_token", value: appToken),
+            URLQueryItem(name: "query", value: query)
+        ]
+        return urlComponents?.url
+    }
+    
     private func formatAmount(_ amount: Double) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -202,6 +317,8 @@ struct LACandidateDetailView: View {
         return formatter.string(from: NSNumber(value: amount)) ?? "$0.00"
     }
 }
+
+// MARK: - Preview
 
 struct LACandidateDetailView_Previews: PreviewProvider {
     static var previews: some View {
@@ -216,3 +333,4 @@ struct LACandidateDetailView_Previews: PreviewProvider {
         }
     }
 }
+

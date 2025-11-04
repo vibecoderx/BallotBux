@@ -59,6 +59,7 @@
 		93E3C6DC2EB977B600833621 /* LACandidateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6DB2EB977B600833621 /* LACandidateListView.swift */; };
 		93E3C6DE2EB977C200833621 /* LACandidateTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6DD2EB977C200833621 /* LACandidateTileView.swift */; };
 		93E3C6E02EB977D800833621 /* LACandidateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6DF2EB977D800833621 /* LACandidateDetailView.swift */; };
+		93E3C6E22EB9829B00833621 /* LATransactionRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6E12EB9829B00833621 /* LATransactionRowViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		93E3C6DB2EB977B600833621 /* LACandidateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LACandidateListView.swift; sourceTree = "<group>"; };
 		93E3C6DD2EB977C200833621 /* LACandidateTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LACandidateTileView.swift; sourceTree = "<group>"; };
 		93E3C6DF2EB977D800833621 /* LACandidateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LACandidateDetailView.swift; sourceTree = "<group>"; };
+		93E3C6E12EB9829B00833621 /* LATransactionRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LATransactionRowViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -238,6 +240,7 @@
 		930B9E4D2EAD9B3600468D9E /* LocalElections */ = {
 			isa = PBXGroup;
 			children = (
+				93E3C6E12EB9829B00833621 /* LATransactionRowViews.swift */,
 				93E3C6DF2EB977D800833621 /* LACandidateDetailView.swift */,
 				93E3C6DD2EB977C200833621 /* LACandidateTileView.swift */,
 				93E3C6DB2EB977B600833621 /* LACandidateListView.swift */,
@@ -490,6 +493,7 @@
 				93BED87F2E5B7BD7002FE21B /* DataModels.swift in Sources */,
 				930B9E482EA83D8500468D9E /* NJCandidateDetailView.swift in Sources */,
 				930B9E642EB4241B00468D9E /* SFElectionYearsView.swift in Sources */,
+				93E3C6E22EB9829B00833621 /* LATransactionRowViews.swift in Sources */,
 				93BED8612E5B7B5E002FE21B /* FederalElectionsView.swift in Sources */,
 				930B9E1C2E92D52300468D9E /* WAElectionYearsView.swift in Sources */,
 				93E3C6E02EB977D800833621 /* LACandidateDetailView.swift in Sources */,
