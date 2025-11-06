@@ -60,6 +60,13 @@
 		93E3C6DE2EB977C200833621 /* LACandidateTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6DD2EB977C200833621 /* LACandidateTileView.swift */; };
 		93E3C6E02EB977D800833621 /* LACandidateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6DF2EB977D800833621 /* LACandidateDetailView.swift */; };
 		93E3C6E22EB9829B00833621 /* LATransactionRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6E12EB9829B00833621 /* LATransactionRowViews.swift */; };
+		93E3C6E52EBAC01100833621 /* AustinDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6E42EBAC00B00833621 /* AustinDataStore.swift */; };
+		93E3C6E72EBAE9AA00833621 /* AustinDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6E62EBAE9A600833621 /* AustinDataModels.swift */; };
+		93E3C6E92EBAE9CF00833621 /* AustinElectionYearsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6E82EBAE9CF00833621 /* AustinElectionYearsView.swift */; };
+		93E3C6EB2EBAE9E000833621 /* AustinCandidateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6EA2EBAE9E000833621 /* AustinCandidateListView.swift */; };
+		93E3C6ED2EBAE9ED00833621 /* AustinCandidateTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6EC2EBAE9ED00833621 /* AustinCandidateTileView.swift */; };
+		93E3C6EF2EBAE9F800833621 /* AustinCandidateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6EE2EBAE9F800833621 /* AustinCandidateDetailView.swift */; };
+		93E3C6F12EBC266000833621 /* AustinTransactionRowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6F02EBC266000833621 /* AustinTransactionRowViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,7 +142,14 @@
 		93E3C6DD2EB977C200833621 /* LACandidateTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LACandidateTileView.swift; sourceTree = "<group>"; };
 		93E3C6DF2EB977D800833621 /* LACandidateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LACandidateDetailView.swift; sourceTree = "<group>"; };
 		93E3C6E12EB9829B00833621 /* LATransactionRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LATransactionRowViews.swift; sourceTree = "<group>"; };
-		93E3C6E32EB98F5A00833621 /* VoteVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = VoteVault.app; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVault.app"; sourceTree = "<absolute>"; };
+		93E3C6E42EBAC00B00833621 /* AustinDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinDataStore.swift; sourceTree = "<group>"; };
+		93E3C6E62EBAE9A600833621 /* AustinDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinDataModels.swift; sourceTree = "<group>"; };
+		93E3C6E82EBAE9CF00833621 /* AustinElectionYearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinElectionYearsView.swift; sourceTree = "<group>"; };
+		93E3C6EA2EBAE9E000833621 /* AustinCandidateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinCandidateListView.swift; sourceTree = "<group>"; };
+		93E3C6EC2EBAE9ED00833621 /* AustinCandidateTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinCandidateTileView.swift; sourceTree = "<group>"; };
+		93E3C6EE2EBAE9F800833621 /* AustinCandidateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinCandidateDetailView.swift; sourceTree = "<group>"; };
+		93E3C6F02EBC266000833621 /* AustinTransactionRowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinTransactionRowViews.swift; sourceTree = "<group>"; };
+		93E3C6F22EBC293100833621 /* VoteVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoteVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -240,6 +254,11 @@
 		930B9E4D2EAD9B3600468D9E /* LocalElections */ = {
 			isa = PBXGroup;
 			children = (
+				93E3C6F02EBC266000833621 /* AustinTransactionRowViews.swift */,
+				93E3C6EE2EBAE9F800833621 /* AustinCandidateDetailView.swift */,
+				93E3C6EC2EBAE9ED00833621 /* AustinCandidateTileView.swift */,
+				93E3C6EA2EBAE9E000833621 /* AustinCandidateListView.swift */,
+				93E3C6E82EBAE9CF00833621 /* AustinElectionYearsView.swift */,
 				93E3C6E12EB9829B00833621 /* LATransactionRowViews.swift */,
 				93E3C6DF2EB977D800833621 /* LACandidateDetailView.swift */,
 				93E3C6DD2EB977C200833621 /* LACandidateTileView.swift */,
@@ -279,12 +298,15 @@
 				9390CC092E58E96900CBFD35 /* VoteVault */,
 				9390CC212E58E96A00CBFD35 /* VoteVaultUITests */,
 				930B9E6D2EB425FC00468D9E /* Secrets.xcconfig */,
+				93E3C6F22EBC293100833621 /* VoteVault.app */,
 			);
 			sourceTree = "<group>";
 		};
 		93BED83C2E5B7001002FE21B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				93E3C6E62EBAE9A600833621 /* AustinDataModels.swift */,
+				93E3C6E42EBAC00B00833621 /* AustinDataStore.swift */,
 				93E3C6D72EB9775900833621 /* LADataModels.swift */,
 				93E3C6D52EB849EC00833621 /* LADataStore.swift */,
 				930B9E612EB4240400468D9E /* SFDataModels.swift */,
@@ -341,7 +363,7 @@
 			packageProductDependencies = (
 			);
 			productName = VoteVault;
-			productReference = 93E3C6E32EB98F5A00833621 /* VoteVault.app */;
+			productReference = 93E3C6F22EBC293100833621 /* VoteVault.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9390CC132E58E96A00CBFD35 /* VoteVaultTests */ = {
@@ -496,6 +518,7 @@
 				93E3C6E02EB977D800833621 /* LACandidateDetailView.swift in Sources */,
 				930B9E622EB4240700468D9E /* SFDataModels.swift in Sources */,
 				930B9E5B2EADA70F00468D9E /* NYCCFBExpenditureRowView.swift in Sources */,
+				93E3C6E72EBAE9AA00833621 /* AustinDataModels.swift in Sources */,
 				930B9E572EAD9F3000468D9E /* NYCCFBDataModels.swift in Sources */,
 				930B9E512EAD9B6000468D9E /* NYCMayoralCandidateListView.swift in Sources */,
 				930B9E6A2EB4244A00468D9E /* SFTransactionRowView.swift in Sources */,
@@ -512,6 +535,8 @@
 				930B9E262EA2FBEB00468D9E /* NYElectionTypesView.swift in Sources */,
 				930B9E4A2EAD8DAB00468D9E /* NYCDataStore.swift in Sources */,
 				93E3C6DC2EB977B600833621 /* LACandidateListView.swift in Sources */,
+				93E3C6F12EBC266000833621 /* AustinTransactionRowViews.swift in Sources */,
+				93E3C6E52EBAC01100833621 /* AustinDataStore.swift in Sources */,
 				930B9E282EA2FC0100468D9E /* NYElectionYearsView.swift in Sources */,
 				930B9E362EA5135600468D9E /* ILElectionYearsView.swift in Sources */,
 				93E3C6DA2EB977A100833621 /* LAElectionYearsView.swift in Sources */,
@@ -524,7 +549,9 @@
 				930B9E4C2EAD9B1600468D9E /* LocalCitySelectionView.swift in Sources */,
 				930B9E682EB4243C00468D9E /* SFCandidateTileView.swift in Sources */,
 				930B9E222E92D55B00468D9E /* WACandidateDetailView.swift in Sources */,
+				93E3C6EB2EBAE9E000833621 /* AustinCandidateListView.swift in Sources */,
 				930B9E2C2EA2FC2E00468D9E /* NYCandidateTileView.swift in Sources */,
+				93E3C6ED2EBAE9ED00833621 /* AustinCandidateTileView.swift in Sources */,
 				93E3C6D82EB9775D00833621 /* LADataModels.swift in Sources */,
 				93E3C6D62EB849EF00833621 /* LADataStore.swift in Sources */,
 				930B9E382EA5136700468D9E /* ILCandidateListView.swift in Sources */,
@@ -532,6 +559,8 @@
 				930B9E322EA5132300468D9E /* ILDataStore.swift in Sources */,
 				930B9E592EAD9F4900468D9E /* NYCCFBContributionRowView.swift in Sources */,
 				930B9E532EAD9B7900468D9E /* NYCMayoralCandidateTileView.swift in Sources */,
+				93E3C6EF2EBAE9F800833621 /* AustinCandidateDetailView.swift in Sources */,
+				93E3C6E92EBAE9CF00833621 /* AustinElectionYearsView.swift in Sources */,
 				930B9E4F2EAD9B4100468D9E /* NYCMayoralElectionYearsView.swift in Sources */,
 				930B9E422EA83D5D00468D9E /* NJElectionYearsView.swift in Sources */,
 			);
@@ -712,7 +741,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vibecodingx.VoteVault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -745,7 +774,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vibecodingx.VoteVault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

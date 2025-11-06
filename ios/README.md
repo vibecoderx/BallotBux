@@ -107,6 +107,10 @@
 
 - https://data.austintexas.gov/browse?limitTo=datasets&sortBy=relevance&pageSize=20&q=Campaign+Finance+-+Committee+Purpose
 
+- https://data.austintexas.gov/api/v3/views/3kfv-biw6/query.json?$$app_token=ZZZ&query=SELECT recipient,contribution_year GROUP BY recipient,contribution_year ORDER BY contribution_year DESC
+
+- https://data.austintexas.gov/api/v3/views/gd3e-xut2/query.json?$$app_token=ZZZ&query=SELECT paid_by,payment_year GROUP BY paid_by,payment_year ORDER BY payment_year DESC
+
 ### Los Angeles
 
 - Candidates
