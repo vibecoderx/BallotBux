@@ -86,6 +86,20 @@
 
 - https://www.elections.il.gov
 
+### IA State
+
+- Registered Political Candidates, Committees and Entities in Iowa
+  - https://data.iowa.gov/api/v3/views/5dtu-swbk/query.json
+  - https://data.iowa.gov/api/v3/views/5dtu-swbk/query.json?app_token=XXX&query=SELECT committee_type GROUP BY committee_type
+  - data.iowa.gov/api/v3/views/5dtu-swbk/query.json?app_token=bt4sBqbyVztVRdDTQLjM7Ac2U&query=SELECT * WHERE committee_type='Governor'
+  - 
+  
+- Iowa Campaign Contributions Received
+  - https://data.iowa.gov/api/v3/views/smfg-ds7h/query.json
+  
+- Iowa Campaign Expenditures
+  - https://data.iowa.gov/api/v3/views/3adi-mht4/query.json
+
 ## Local Elections
 
 ### San Francisco

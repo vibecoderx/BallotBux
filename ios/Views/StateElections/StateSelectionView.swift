@@ -20,6 +20,11 @@ struct StateSelectionView: View {
             }
              */
             
+            // NEW: Iowa Entry
+            NavigationLink(destination: IAElectionTypesView()) {
+                ElectionTypeRow(title: "Iowa", icon: "map.fill")
+            }
+            
             NavigationLink(destination: NJElectionTypesView()) {
                 ElectionTypeRow(title: "New Jersey", icon: "map.fill")
             }
@@ -45,4 +50,3 @@ struct StateSelectionView_Previews: PreviewProvider {
         StateSelectionView()
     }
 }
-

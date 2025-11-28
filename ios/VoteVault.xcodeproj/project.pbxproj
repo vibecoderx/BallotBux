@@ -51,6 +51,12 @@
 		936191822E627788004D5EF1 /* TopSuperPACExpendituresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936191812E627788004D5EF1 /* TopSuperPACExpendituresView.swift */; };
 		936191842E6277A2004D5EF1 /* SuperPACExpenditureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936191832E6277A2004D5EF1 /* SuperPACExpenditureRowView.swift */; };
 		936191862E6278BB004D5EF1 /* SuperPACElectionCyclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936191852E6278BB004D5EF1 /* SuperPACElectionCyclesView.swift */; };
+		938E0B492ED9FFFD0084FC32 /* IADataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E0B482ED9FFF70084FC32 /* IADataStore.swift */; };
+		938E0B4B2EDA00210084FC32 /* IAElectionTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E0B4A2EDA00210084FC32 /* IAElectionTypesView.swift */; };
+		938E0B4D2EDA00320084FC32 /* IAElectionYearsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E0B4C2EDA00320084FC32 /* IAElectionYearsView.swift */; };
+		938E0B4F2EDA003D0084FC32 /* IACandidateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E0B4E2EDA003D0084FC32 /* IACandidateListView.swift */; };
+		938E0B512EDA00490084FC32 /* IACandidateTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E0B502EDA00490084FC32 /* IACandidateTileView.swift */; };
+		938E0B532EDA00560084FC32 /* IACandidateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E0B522EDA00560084FC32 /* IACandidateDetailView.swift */; };
 		93BED8612E5B7B5E002FE21B /* FederalElectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BED8432E5B70F2002FE21B /* FederalElectionsView.swift */; };
 		93BED87F2E5B7BD7002FE21B /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BED8422E5B705A002FE21B /* DataModels.swift */; };
 		93E3C6D62EB849EF00833621 /* LADataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3C6D52EB849EC00833621 /* LADataStore.swift */; };
@@ -131,10 +137,16 @@
 		936191812E627788004D5EF1 /* TopSuperPACExpendituresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSuperPACExpendituresView.swift; sourceTree = "<group>"; };
 		936191832E6277A2004D5EF1 /* SuperPACExpenditureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPACExpenditureRowView.swift; sourceTree = "<group>"; };
 		936191852E6278BB004D5EF1 /* SuperPACElectionCyclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPACElectionCyclesView.swift; sourceTree = "<group>"; };
+		938E0AFA2ED9F14D0084FC32 /* VoteVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoteVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		938E0AFB2ED9F14D0084FC32 /* VoteVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoteVaultUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		938E0B482ED9FFF70084FC32 /* IADataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IADataStore.swift; sourceTree = "<group>"; };
+		938E0B4A2EDA00210084FC32 /* IAElectionTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAElectionTypesView.swift; sourceTree = "<group>"; };
+		938E0B4C2EDA00320084FC32 /* IAElectionYearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAElectionYearsView.swift; sourceTree = "<group>"; };
+		938E0B4E2EDA003D0084FC32 /* IACandidateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IACandidateListView.swift; sourceTree = "<group>"; };
+		938E0B502EDA00490084FC32 /* IACandidateTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IACandidateTileView.swift; sourceTree = "<group>"; };
+		938E0B522EDA00560084FC32 /* IACandidateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IACandidateDetailView.swift; sourceTree = "<group>"; };
 		93BED8422E5B705A002FE21B /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		93BED8432E5B70F2002FE21B /* FederalElectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederalElectionsView.swift; sourceTree = "<group>"; };
-		93E3C6872EB6C7E600833621 /* VoteVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VoteVaultTests.xctest; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVault.app/PlugIns/VoteVaultTests.xctest"; sourceTree = "<absolute>"; };
-		93E3C6882EB6C7E600833621 /* VoteVaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VoteVaultUITests.xctest; path = "/Users/asaxena/workspace/apps/VoteVault/ios/build/Debug-iphoneos/VoteVaultUITests-Runner.app/PlugIns/VoteVaultUITests.xctest"; sourceTree = "<absolute>"; };
 		93E3C6D52EB849EC00833621 /* LADataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LADataStore.swift; sourceTree = "<group>"; };
 		93E3C6D72EB9775900833621 /* LADataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LADataModels.swift; sourceTree = "<group>"; };
 		93E3C6D92EB977A100833621 /* LAElectionYearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LAElectionYearsView.swift; sourceTree = "<group>"; };
@@ -226,6 +238,11 @@
 		930B9E162E92D46800468D9E /* StateElections */ = {
 			isa = PBXGroup;
 			children = (
+				938E0B522EDA00560084FC32 /* IACandidateDetailView.swift */,
+				938E0B502EDA00490084FC32 /* IACandidateTileView.swift */,
+				938E0B4E2EDA003D0084FC32 /* IACandidateListView.swift */,
+				938E0B4C2EDA00320084FC32 /* IAElectionYearsView.swift */,
+				938E0B4A2EDA00210084FC32 /* IAElectionTypesView.swift */,
 				930B9E472EA83D8500468D9E /* NJCandidateDetailView.swift */,
 				930B9E452EA83D7800468D9E /* NJCandidateTileView.swift */,
 				930B9E432EA83D6E00468D9E /* NJCandidateListView.swift */,
@@ -299,12 +316,15 @@
 				9390CC212E58E96A00CBFD35 /* VoteVaultUITests */,
 				930B9E6D2EB425FC00468D9E /* Secrets.xcconfig */,
 				93E3C6F22EBC293100833621 /* VoteVault.app */,
+				938E0AFA2ED9F14D0084FC32 /* VoteVaultTests.xctest */,
+				938E0AFB2ED9F14D0084FC32 /* VoteVaultUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
 		93BED83C2E5B7001002FE21B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				938E0B482ED9FFF70084FC32 /* IADataStore.swift */,
 				93E3C6E62EBAE9A600833621 /* AustinDataModels.swift */,
 				93E3C6E42EBAC00B00833621 /* AustinDataStore.swift */,
 				93E3C6D72EB9775900833621 /* LADataModels.swift */,
@@ -383,7 +403,7 @@
 			packageProductDependencies = (
 			);
 			productName = VoteVaultTests;
-			productReference = 93E3C6872EB6C7E600833621 /* VoteVaultTests.xctest */;
+			productReference = 938E0AFA2ED9F14D0084FC32 /* VoteVaultTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		9390CC1D2E58E96A00CBFD35 /* VoteVaultUITests */ = {
@@ -406,7 +426,7 @@
 			packageProductDependencies = (
 			);
 			productName = VoteVaultUITests;
-			productReference = 93E3C6882EB6C7E600833621 /* VoteVaultUITests.xctest */;
+			productReference = 938E0AFB2ED9F14D0084FC32 /* VoteVaultUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -513,16 +533,20 @@
 				930B9E482EA83D8500468D9E /* NJCandidateDetailView.swift in Sources */,
 				930B9E642EB4241B00468D9E /* SFElectionYearsView.swift in Sources */,
 				93E3C6E22EB9829B00833621 /* LATransactionRowViews.swift in Sources */,
+				938E0B4B2EDA00210084FC32 /* IAElectionTypesView.swift in Sources */,
 				93BED8612E5B7B5E002FE21B /* FederalElectionsView.swift in Sources */,
 				930B9E1C2E92D52300468D9E /* WAElectionYearsView.swift in Sources */,
+				938E0B512EDA00490084FC32 /* IACandidateTileView.swift in Sources */,
 				93E3C6E02EB977D800833621 /* LACandidateDetailView.swift in Sources */,
 				930B9E622EB4240700468D9E /* SFDataModels.swift in Sources */,
 				930B9E5B2EADA70F00468D9E /* NYCCFBExpenditureRowView.swift in Sources */,
 				93E3C6E72EBAE9AA00833621 /* AustinDataModels.swift in Sources */,
+				938E0B4D2EDA00320084FC32 /* IAElectionYearsView.swift in Sources */,
 				930B9E572EAD9F3000468D9E /* NYCCFBDataModels.swift in Sources */,
 				930B9E512EAD9B6000468D9E /* NYCMayoralCandidateListView.swift in Sources */,
 				930B9E6A2EB4244A00468D9E /* SFTransactionRowView.swift in Sources */,
 				930B9E3A2EA5137500468D9E /* ILCandidateTileView.swift in Sources */,
+				938E0B492ED9FFFD0084FC32 /* IADataStore.swift in Sources */,
 				930B9E302EA2FC6A00468D9E /* NYDataStore.swift in Sources */,
 				930B9E3E2EA83D3D00468D9E /* NJDataStore.swift in Sources */,
 				930B9E242E9B4BC700468D9E /* WACandidateTileView.swift in Sources */,
@@ -542,6 +566,7 @@
 				93E3C6DA2EB977A100833621 /* LAElectionYearsView.swift in Sources */,
 				93E3C6DE2EB977C200833621 /* LACandidateTileView.swift in Sources */,
 				930B9E6C2EB4245400468D9E /* SFCandidateDetailView.swift in Sources */,
+				938E0B532EDA00560084FC32 /* IACandidateDetailView.swift in Sources */,
 				930B9E462EA83D7800468D9E /* NJCandidateTileView.swift in Sources */,
 				930B9E182E92D4EB00468D9E /* StateSelectionView.swift in Sources */,
 				930B9E3C2EA5138000468D9E /* ILCandidateDetailView.swift in Sources */,
@@ -550,6 +575,7 @@
 				930B9E682EB4243C00468D9E /* SFCandidateTileView.swift in Sources */,
 				930B9E222E92D55B00468D9E /* WACandidateDetailView.swift in Sources */,
 				93E3C6EB2EBAE9E000833621 /* AustinCandidateListView.swift in Sources */,
+				938E0B4F2EDA003D0084FC32 /* IACandidateListView.swift in Sources */,
 				930B9E2C2EA2FC2E00468D9E /* NYCandidateTileView.swift in Sources */,
 				93E3C6ED2EBAE9ED00833621 /* AustinCandidateTileView.swift in Sources */,
 				93E3C6D82EB9775D00833621 /* LADataModels.swift in Sources */,
