@@ -96,6 +96,8 @@
   
 - Iowa Campaign Contributions Received
   - https://data.iowa.gov/api/v3/views/smfg-ds7h/query.json
+  - List of all Governor candidates via Contributions (sorted by year)
+    - https://data.iowa.gov/api/v3/views/smfg-ds7h/query.json?app_token=XXX&query=SELECT%20*%20WHERE%20committee_type=%27Governor%27%20ORDER%20BY%20date%20DESC
   
 - Iowa Campaign Expenditures
   - https://data.iowa.gov/api/v3/views/3adi-mht4/query.json

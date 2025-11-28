@@ -19,14 +19,27 @@ struct IACandidateInfo: Identifiable {
 // Maps Election Office -> Year -> List of Candidates
 let iowaElectionData: [String: [Int: [IACandidateInfo]]] = [
     "Governor": [
+        2026: [
+            IACandidateInfo(name: "Rob Sand", party: "Democratic", committee_id: "5185"),
+            IACandidateInfo(name: "Randy Feenstra", party: "Republican", committee_id: "1777"),
+            IACandidateInfo(name: "Brad Sherman", party: "Republican", committee_id: "2640"),
+            IACandidateInfo(name: "Sondra Wilson", party: "Independent", committee_id: "SWGA51030")
+        ],
         2022: [
             IACandidateInfo(name: "Kim Reynolds", party: "Republican", committee_id: "5173"),
-            IACandidateInfo(name: "Deidre DeJear", party: "Democratic", committee_id: "6328"),
-            IACandidateInfo(name: "Rick Stewart", party: "Libertarian", committee_id: "2077")
+            IACandidateInfo(name: "Deidre DeJear", party: "Democratic", committee_id: "5198"),
+            IACandidateInfo(name: "Rick Stewart", party: "Libertarian", committee_id: "5201")
         ],
         2018: [
             IACandidateInfo(name: "Kim Reynolds", party: "Republican", committee_id: "5173"),
-            IACandidateInfo(name: "Fred Hubbell", party: "Democratic", committee_id: "5157")
+            IACandidateInfo(name: "Fred Hubbell", party: "Democratic", committee_id: "5172"),
+            IACandidateInfo(name: "Jake Porter", party: "Libertarian", committee_id: "5156"),
+            IACandidateInfo(name: "Gary Siegwarth", party: "Independent", committee_id: "5180")
+        ],
+        2014: [
+            IACandidateInfo(name: "Terry Branstad", party: "Republican", committee_id: "5140"),
+            IACandidateInfo(name: "Jack Hatch", party: "Democratic", committee_id: "5153"),
+            IACandidateInfo(name: "Lee Deakins Hieb", party: "Libertarian", committee_id: "5160")
         ]
     ],
     "Lt Governor": [
